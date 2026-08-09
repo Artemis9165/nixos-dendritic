@@ -1,0 +1,12 @@
+#+TITLE: Writeroom
+#+AUTHOR: Archemis
+
+#+begin_src emacs-lisp
+  (use-package writeroom-mode
+    :ensure t
+    :demand t
+    :config
+    (add-hook 'writeroom-mode-disable-hook
+              (lambda ()
+                (set-frame-parameter nil 'fullscreen nil))))
+#+end_src

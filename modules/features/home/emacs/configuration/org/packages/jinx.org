@@ -1,0 +1,9 @@
+#+TITLE: Jinx
+#+AUTHOR:Archemis
+
+#+begin_src emacs-lisp
+    (use-package jinx
+      :ensure t
+:demand r
+      :hook (emacs-startup . global-jinx-mode))
+#+end_src

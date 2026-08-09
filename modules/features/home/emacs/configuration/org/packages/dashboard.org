@@ -1,0 +1,11 @@
+#+TITLE: Dashboard
+#+AUTHOR: Archemis
+
+#+begin_src emacs-lisp
+(use-package dashboard
+:ensure t
+:init
+ (setq initial-buffer-choice 'dashboard-open)
+:config
+(dashboard-setup-startup-hook))
+#+end_src

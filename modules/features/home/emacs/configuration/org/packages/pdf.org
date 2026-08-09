@@ -1,0 +1,20 @@
+#+TITLE: PDF
+#+AUTHOR: Archemis
+
+* PDF Tools
+#+begin_src emacs-lisp
+    (use-package pdf-tools
+      :ensure t
+      :demand t
+      :config (pdf-tools-install :no-query)
+      :mode ("\\.pdf\\'" . pdf-view-mode))
+#+end_src
+
+** View Restore
+#+begin_src emacs-lisp
+    (use-package pdf-view-restore
+      :after pdf-tools
+      :ensure t
+      :demand t
+      :hook (pdf-view-mode-hook . pdf-view-restore-mode))
+#+end_src

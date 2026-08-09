@@ -1,0 +1,19 @@
+#+TITLE:Nerd Icons
+#+AUTHOR: Archemis
+
+#+begin_src emacs-lisp
+    (use-package nerd-icons
+:ensure t
+:demand t
+:custom
+(nerd-icons-font-family "JetBrainsMono Nerd Font"))
+
+#+end_src
+
+* Nerd-Icons-Dired
+#+begin_src emacs-lisp
+    (use-package nerd-icons-dired
+:ensure t
+:demand t
+:hook (dired-mode . nerd-icons-dired-mode))
+#+end_src

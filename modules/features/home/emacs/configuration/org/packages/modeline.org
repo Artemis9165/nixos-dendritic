@@ -1,0 +1,10 @@
+#+TITLE: Modeline
+#+AUTHOR: Archemis
+
+#+begin_src emacs-lisp
+    (use-package doom-modeline
+:ensure t
+:demand t
+:init (doom-modeline-mode 1))
+
+#+end_src

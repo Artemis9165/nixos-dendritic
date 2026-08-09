@@ -1,0 +1,57 @@
+#+TITLE:Remaps
+#+AUTHOR:Archemis
+
+* General Keybindings
+#+begin_src emacs-lisp
+              (use-package general 
+                :ensure t 
+            	  :demand t
+                :config
+                (general-evil-setup)
+                (defconst leader-def "SPC")
+                (general-create-definer leader
+              			      :states 'normal
+              			      :keymaps 'override
+              			      :prefix leader-def)
+                (leader
+            	 "f" '(:ignore t)
+        	     "f f" 'consult-find
+        	     "f g" 'consult-ripgrep
+        	     "f b" 'consult-buffer
+        	     "f h" 'consult-man
+            	 "f c" '(lambda () (interactive) (dired user-emacs-directory))
+             )
+            (leader
+            	 "r" '(:ignore t)
+            	 "r r" '(lambda () (interactive) (load-file user-init-file))
+        	     "r u" 'elpaca-update-all
+             )
+        (leader
+                	 "t" '(:ignore t)
+                "t l" 'display-line-numbers-mode
+        	 "t t" 'visual-line-mode
+        	 "t m" 'toggle-markdown-view-mode
+        	 "t w" 'writeroom-mode
+            )
+    (leader
+      "o"   '(:ignore t)
+      "o o" 'org-mode
+      "o l" 'org-fragtog-mode
+      "o T" 'toc-org-insert-toc
+      "o t" 'org-transclusion-mode
+
+      "o r" '(:ignore t)
+      "o r f" 'org-roam-node-find
+      "o r i" 'org-roam-node-insert
+      "o r c" 'org-roam-capture
+      "o r g" 'org-roam-ui-open
+
+      "o n" '(:ignore t)
+      "o n n" 'org-noter
+      "o n i" 'org-noter-insert-precise-note
+      "o n q" 'org-noter-kill-session
+
+      "o a" '(:ignore t)
+      "o a i" 'org-download-clipboard
+      "o a l" 'org-cliplink))
+#+end_src

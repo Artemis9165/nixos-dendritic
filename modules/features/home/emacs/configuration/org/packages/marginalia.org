@@ -1,0 +1,10 @@
+#+TITLE: Marginalia
+#+AUTHOR: Archemis
+
+#+begin_src emacs-lisp
+    (use-package marginalia
+:ensure t
+:demand t
+:init (marginalia-mode))
+
+#+end_src

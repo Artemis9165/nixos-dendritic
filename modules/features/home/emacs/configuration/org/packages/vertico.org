@@ -1,0 +1,11 @@
+#+TITLE: Vertico
+#+AUTHOR: Archemis
+
+#+begin_src emacs-lisp
+    (use-package vertico
+:ensure t
+:demand t
+:init (vertico-mode)
+:custom (vertico-cycle t))
+
+#+end_src

@@ -1,0 +1,8 @@
+#+TITLE:Consult
+#+AUTHOR: Archemis
+#+begin_src emacs-lisp
+    (use-package consult
+:ensure t
+:demand t)
+
+#+end_src

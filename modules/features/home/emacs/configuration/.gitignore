@@ -1,0 +1,15 @@
+eln-cache/
+elpaca/
+themes/
+*~
+\#*\#
+.#*
+*.elc
+org/**/*.el
+org/*.el
+recentf
+org-roam.db
+transient/
+history
+.org-id-locations
+bookmarks

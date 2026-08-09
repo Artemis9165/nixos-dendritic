@@ -1,0 +1,10 @@
+#+TITLE: Websocket
+#+AUTHOR: Archemis
+
+#+begin_src emacs-lisp
+    (use-package websocket
+:after org-roam
+:ensure t
+:demand t)
+
+#+end_src

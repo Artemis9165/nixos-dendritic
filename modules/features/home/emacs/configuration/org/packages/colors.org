@@ -1,0 +1,14 @@
+#+TITLE: Colors
+#+AUTHOR: Archemis
+
+* Doom Themes
+#+begin_src emacs-lisp
+    (use-package doom-themes
+    :ensure t
+    :demand t
+    :config
+      (load-theme 'doom-one t)
+  	(custom-theme-set-faces
+  	 'doom-one
+  	 '(default ((t (:background "#1f2329"))))))
+#+end_src

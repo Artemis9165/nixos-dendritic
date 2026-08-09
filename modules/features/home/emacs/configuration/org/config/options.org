@@ -1,0 +1,49 @@
+#+TITLE: Options
+#+AUTHOR: Archemis
+
+* Disable Backups
+#+begin_src emacs-lisp
+(setq make-backup-files nil)
+#+end_src
+
+* Font
+#+begin_src emacs-lisp
+  (set-face-attribute 'default nil
+  		    :font "JetBrainsMono Nerd Font"
+  		    :height 120
+  		    :weight 'regular)
+  (set-face-attribute 'variable-pitch nil
+  		    :font "Roboto"
+  		    :height 120
+  		    :weight 'regular)
+  (set-face-attribute 'fixed-pitch nil
+  		    :font "JetBrainsMono Nerd Font"
+  		    :height 120
+  		    :weight 'regular)
+  (set-face-attribute 'font-lock-comment-face nil
+  		    :slant 'italic)
+  (set-face-attribute 'font-lock-keyword-face nil
+  		    :slant 'italic)
+  (add-to-list 'default-frame-alist '(font . "JetBrainsMono Nerd Font"))
+#+end_src
+
+* General Defaults
+#+begin_src emacs-lisp
+        (electric-indent-mode -1)
+        (electric-pair-mode 1)
+        (global-auto-revert-mode t)
+        (setq display-line-numbers-type 'visual)
+        (global-display-line-numbers-mode t)
+        (global-visual-line-mode t)
+        (menu-bar-mode -1)
+        (scroll-bar-mode -1)
+        (tool-bar-mode -1)
+        (setq org-edit-src-content-indentation 4)
+        (setq use-file-dialog nil)
+        (setq use-dialog-box nil)
+        (setq pop-up-windows nil)
+(add-hook 'org-mode-hook (lambda ()
+           (setq-local electric-pair-inhibit-predicate
+                   `(lambda (c)
+                  (if (char-equal c ?<) t (,electric-pair-inhibit-predicate c))))))
+#+end_src
