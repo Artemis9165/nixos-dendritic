@@ -1,11 +1,9 @@
 { self, inputs, ... }: {
   flake.homeModules.codingConfiguration = { pkgs, ... }: {
     imports = [
-      self.homeModules.niriConfiguration
-      self.homeModules.kittyConfiguration
+      self.homeModules.commonImports
       self.homeModules.neovimConfiguration
       self.homeModules.tmuxConfiguration
-      self.homeModules.starship
       self.homeModules.git
     ];
     programs.bash.enable = true;
