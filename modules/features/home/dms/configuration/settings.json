@@ -302,10 +302,10 @@
     }
   ],
   "networkPreference": "auto",
-  "iconThemeDark": "System Default",
+  "iconThemeDark": "breeze",
   "iconThemeLight": "System Default",
   "iconThemePerMode": false,
-  "lastAppliedIconTheme": "",
+  "lastAppliedIconTheme": "breeze",
   "cursorSettings": {
     "theme": "System Default",
     "size": 24,

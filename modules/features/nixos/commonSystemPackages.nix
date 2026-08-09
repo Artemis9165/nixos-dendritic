@@ -8,6 +8,7 @@
       keepassxc
       fetch
       kdePackages.breeze
+      kdePackages.breeze-icons
       mpv
     ];
   };
