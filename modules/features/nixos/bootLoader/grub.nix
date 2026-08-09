@@ -7,7 +7,7 @@
         efiSupport = true;
         gfxmodeEfi = "2560x1440";
         gfxpayloadEfi = "keep";
-        theme = "${config.home.homeDirectory}/nixos-dendritic/modules/features/nixos/bootLoader/themes/darkmatter";
+        theme = ./themes/darkmatter;
       };
       efi.canTouchEfiVariables = true;
     };
