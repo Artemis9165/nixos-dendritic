@@ -4,16 +4,11 @@
       neovim
       git
       kitty
-      librewolf
-      ungoogled-chromium
-      brightnessctl
-      grim
-      slurp
-      wl-clipboard
       imagemagick
       keepassxc
       fetch
-      thunderbird
+      kdePackages.breeze
+      mpv
     ];
   };
 }

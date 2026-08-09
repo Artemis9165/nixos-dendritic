@@ -12,12 +12,24 @@
       self.nixosModules.commonSystemPackages
       self.nixosModules.fonts
       self.nixosModules.grub
+      self.nixosModules.batteryControl
+      self.nixosModules.radicale # TEMPORARY FIX, MOVE LATER
     ];
     time.timeZone = "America/New_York";
     networking = {
       hostName = "Stylinx-Neptune";
       networkmanager.enable = true;
     };
+    environment.systemPackages = with pkgs; [
+      librewolf
+      ungoogled-chromium
+      brightnessctl
+      grim
+      slurp
+      wl-clipboard
+      thunderbird
+      localsend
+    ];
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
     system.stateVersion = "26.05";
   };
