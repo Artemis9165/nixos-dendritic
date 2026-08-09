@@ -546,7 +546,11 @@
   "updaterAllowAUR": true,
   "updaterIgnoredPackages": [],
   "displayNameMode": "system",
-  "screenPreferences": {},
+  "screenPreferences": {
+    "wallpaper": [
+      "all"
+    ]
+  },
   "showOnLastDisplay": {},
   "niriOutputSettings": {},
   "hyprlandOutputSettings": {},

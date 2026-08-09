@@ -9,7 +9,7 @@
           auth = {
             type = "htpasswd";
             htpasswd_filename = "/var/lib/radicale/users/htpasswd";
-            htpasswd_encryption = "bcrypt";
+            htpasswd_encryption = "autodetect";
           };
         };
       };
