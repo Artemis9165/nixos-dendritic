@@ -1,7 +1,7 @@
 {
   "currentThemeName": "custom",
   "currentThemeCategory": "registry",
-  "customThemeFile": "/home/coding/.config/DankMaterialShell/themes/crimsonVoltage/theme.json",
+  "customThemeFile": "@DMS_CONFIG@/themes/crimsonVoltage/theme.json",
   "registryThemeVariants": {},
   "matugenScheme": "scheme-tonal-spot",
   "matugenContrast": 0,

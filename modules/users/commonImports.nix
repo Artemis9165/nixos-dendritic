@@ -3,6 +3,7 @@
     imports = [
       self.homeModules.niriConfiguration
       self.homeModules.kittyConfiguration
+      self.homeModules.dmsConfiguration
       self.homeModules.starship
     ];
   };
