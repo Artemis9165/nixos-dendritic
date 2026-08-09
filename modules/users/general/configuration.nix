@@ -1,7 +1,7 @@
 { self, inputs, ... }: {
   flake.homeModules.generalConfiguration = { pkgs, ... }: {
     imports = [
-      self.homeModules.starship
+      self.homeModules.commonImports
     ];
     programs.bash.enable = true;
     programs.starship.presets = [ "jetpack" ];
