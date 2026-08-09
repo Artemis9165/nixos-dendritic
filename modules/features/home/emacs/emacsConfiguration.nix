@@ -9,6 +9,6 @@
       texliveFull
     ];
     xdg.configFile."emacs".source = config.lib.file.mkOutOfStoreSymlink
-      "${config.home.homeDirectory}/nixos-dendritic/modules/features/home/emacs/configuration";
+      "${./configuration}";
   };
 }

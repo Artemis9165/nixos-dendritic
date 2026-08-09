@@ -20,6 +20,6 @@
       sideloadInitLua = true;
     };
     xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink
-      "${config.home.homeDirectory}/nixos-dendritic/modules/features/home/neovim/configuration";
+      "${./configuration}";
   };
 }
