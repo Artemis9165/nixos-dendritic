@@ -3,7 +3,7 @@
 
 #+begin_src emacs-lisp
     (use-package jinx
-      :ensure t
+      :ensure nil
 :demand r
       :hook (emacs-startup . global-jinx-mode))
 #+end_src

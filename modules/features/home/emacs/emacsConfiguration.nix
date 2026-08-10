@@ -1,13 +1,18 @@
 { self, inputs, ... }: {
   flake.homeModules.emacsConfiguration = { config, pkgs, ... }: {
     home.packages = with pkgs; [
-      emacs-pgtk
-      enchant
+      enchant_2
       hunspell
       hunspellDicts.en-us
       poppler
       texliveFull
+      gcc
+      ((emacsPackagesFor emacs-pgtk).emacsWithPackages (epkgs: [ epkgs.jinx ]))
     ];
+
+    home.sessionVariables = {
+      PKG_CONFIG_PATH = "${pkgs.enchant}/lib/pkgconfig";
+    };
 
     xdg.configFile."emacs/early-init.el".source = ./configuration/early-init.el;
     xdg.configFile."emacs/init.el".source = ./configuration/init.el;
@@ -15,13 +20,5 @@
       source = ./configuration/org;
       recursive = true;
     };
-    #    xdg.configFile."emacs/org/config" = {
-    #      source = ./configuration/org/config;
-    #      recursive = true;
-    #    };
-    #    xdg.configFile."emacs/org/packages" = {
-    #      source = ./configuration/org/packages;
-    #      recursive = true;
-    #    };
   };
 }
