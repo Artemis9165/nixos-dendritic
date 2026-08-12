@@ -13,7 +13,6 @@
       self.nixosModules.fonts
       self.nixosModules.grub
       self.nixosModules.batteryControl
-      self.nixosModules.printing
       self.nixosModules.radicale # TEMPORARY FIX, MOVE LATER
     ];
     time.timeZone = "America/New_York";
