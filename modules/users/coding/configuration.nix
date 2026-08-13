@@ -3,6 +3,7 @@
     imports = [
       self.homeModules.commonImports
       self.homeModules.neovimConfiguration
+      self.homeModules.emacsConfiguration
       self.homeModules.tmuxConfiguration
       self.homeModules.git
     ];
