@@ -2,6 +2,12 @@
 #+AUTHOR: Archemis
 
 #+begin_src emacs-lisp
+    (use-package visual-fill-column
+    :ensure t
+    :demand t)
+#+end_src
+
+#+begin_src emacs-lisp
     (use-package nov
 :ensure t
 :demand t
