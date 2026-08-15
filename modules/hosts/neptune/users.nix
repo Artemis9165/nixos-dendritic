@@ -6,7 +6,6 @@
         isNormalUser = true;
         extraGroups = [ "wheel" "networkmanager" ];
         packages = with pkgs; [
-          python3
         ];
       };
       general = {

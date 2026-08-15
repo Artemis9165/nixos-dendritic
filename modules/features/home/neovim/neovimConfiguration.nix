@@ -11,7 +11,15 @@
       wget
       rustc
       cargo
+      python3
+      lua55Packages.luarocks-nix
+      lua55Packages.tree-sitter-cli
+      clang-tools
+      lua-language-server
       rust-analyzer
+      nil
+      nixfmt
+      nixpkgs-fmt
     ];
     programs.neovim = {
       enable = true;
