@@ -9,7 +9,6 @@
       self.nixosModules.keyd
       self.nixosModules.audio
       self.nixosModules.bluetooth
-      self.nixosModules.libreOffice
       self.nixosModules.commonSystemPackages
       self.nixosModules.fonts
       self.nixosModules.grub

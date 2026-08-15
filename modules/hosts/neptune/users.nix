@@ -1,10 +1,13 @@
 { self, inputs, ... }: {
-  flake.nixosModules.neptuneUsers = { ... }: {
+  flake.nixosModules.neptuneUsers = { pkgs, ... }: {
     imports = [ inputs.home-manager.nixosModules.default ];
     users.users = {
       coding = {
         isNormalUser = true;
         extraGroups = [ "wheel" "networkmanager" ];
+        package = with pkgs; [
+          python3
+        ];
       };
       general = {
         isNormalUser = true;
@@ -13,6 +16,11 @@
       school = {
         isNormalUser = true;
         extraGroups = [ "networkmanager" ];
+        packages = with pkgs; [
+          libreoffice-qt
+          hunspell
+          hunspellDicts.en_US
+        ];
       };
     };
     home-manager.users = {
