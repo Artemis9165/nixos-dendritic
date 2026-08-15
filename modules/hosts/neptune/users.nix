@@ -5,7 +5,7 @@
       coding = {
         isNormalUser = true;
         extraGroups = [ "wheel" "networkmanager" ];
-        package = with pkgs; [
+        packages = with pkgs; [
           python3
         ];
       };
