@@ -1,4 +1,10 @@
 { self, inputs, ... }: {
+  flake.nixosModules.schoolInit = { pkgs, ... }: {
+    users.users.school = {
+      isNormalUser = true;
+      extraGroups = [ "networkmanager" "video" "render" ];
+    };
+  };
   flake.homeModules.schoolConfiguration = { pkgs, ... }: {
     imports = [
       self.homeModules.commonImports

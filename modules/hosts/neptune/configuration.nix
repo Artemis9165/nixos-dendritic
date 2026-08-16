@@ -6,12 +6,15 @@
       self.nixosModules.neptuneUsers
       self.nixosModules.homeManager
       self.nixosModules.niri
+      self.nixosModules.garbageCollection
       self.nixosModules.keyd
       self.nixosModules.audio
       self.nixosModules.bluetooth
       self.nixosModules.commonSystemPackages
       self.nixosModules.fonts
       self.nixosModules.grub
+      self.nixosModules.obsStudio
+      self.nixosModules.closeLaptopLid
       self.nixosModules.batteryControl
       self.nixosModules.radicale # TEMPORARY FIX, MOVE LATER
     ];
@@ -30,6 +33,15 @@
       thunderbird
       localsend
     ];
+    hardware.graphics = {
+      enable = true;
+      extraPackages = with pkgs; [
+        intel-media-driver
+      ];
+    };
+    environment.sessionVariables = {
+      LIBVA_DRIVER_NAME = "iHD";
+    };
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
     system.stateVersion = "26.05";
   };

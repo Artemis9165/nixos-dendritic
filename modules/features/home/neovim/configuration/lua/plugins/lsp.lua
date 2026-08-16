@@ -15,8 +15,14 @@ return {
     config = function()
         require("conform").setup({
             formatters_by_ft = {
+                lua = { "lua_ls" },
                 nix = { "nixpkgs_fmt" },
                 c = { "clang-format" },
+            },
+            formatters = {
+                ["clang-format"] = {
+                    prepend_args = { "--style={IndentWidth: 4, TabWidth: 4, UseTab: Never}" },
+                },
             },
             format_on_save = {
                 timeout_ms = 500,

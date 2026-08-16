@@ -1,4 +1,10 @@
 { self, inputs, ... }: {
+  flake.nixosModules.codingInit = { pkgs, ... }: {
+    users.users.coding = {
+      isNormalUser = true;
+      extraGroups = [ "wheel" "networkmanager" "video" "render" ];
+    };
+  };
   flake.homeModules.codingConfiguration = { pkgs, ... }: {
     imports = [
       self.homeModules.commonImports
