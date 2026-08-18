@@ -10,6 +10,7 @@
       self.nixosModules.keyd
       self.nixosModules.audio
       self.nixosModules.bluetooth
+      self.nixosModules.localsend
       self.nixosModules.commonSystemPackages
       self.nixosModules.fonts
       self.nixosModules.obsStudio
@@ -30,7 +31,6 @@
       slurp
       wl-clipboard
       thunderbird
-      localsend
     ];
     hardware.graphics = {
       enable = true;

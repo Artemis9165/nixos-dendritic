@@ -3,6 +3,12 @@
     environment.systemPackages = with pkgs; [
       sbctl
     ];
-    boot.loader.limine.enable = true;
+    boot.loader = {
+      efi.canTouchEfiVariables = true;
+      limine = {
+        enable = true;
+        efiSupport = true;
+      };
+    };
   };
 }
