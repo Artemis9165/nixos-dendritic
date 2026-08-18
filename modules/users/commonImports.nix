@@ -5,7 +5,6 @@
       self.homeModules.kittyConfiguration
       self.homeModules.dmsConfiguration
       self.homeModules.starship
-      self.homeModules.vdirsyncer
       self.homeModules.khal
       self.homeModules.btop
     ];
