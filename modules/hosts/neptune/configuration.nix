@@ -2,7 +2,8 @@
   flake.nixosModules.neptuneConfiguration = { pkgs, ... }: {
     imports = [
       self.nixosModules.neptuneHardwareConfiguration
-      self.nixosModules.grub
+      self.nixosModules.neptuneDiskoConfiguration
+      self.nixosModules.limine
       self.nixosModules.neptuneUsers
       self.nixosModules.homeManager
       self.nixosModules.niri
@@ -12,7 +13,6 @@
       self.nixosModules.bluetooth
       self.nixosModules.commonSystemPackages
       self.nixosModules.fonts
-      self.nixosModules.grub
       self.nixosModules.obsStudio
       self.nixosModules.closeLaptopLid
       self.nixosModules.batteryControl
