@@ -2,7 +2,6 @@
   flake.nixosModules.neptuneConfiguration = { pkgs, ... }: {
     imports = [
       self.nixosModules.neptuneHardwareConfiguration
-      self.nixosModules.neptuneDiskoConfiguration
       self.nixosModules.limine
       self.nixosModules.neptuneUsers
       self.nixosModules.homeManager
