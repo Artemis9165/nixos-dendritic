@@ -2,6 +2,7 @@
   flake.nixosModules.commonSystemPackages = { pkgs, ... }: {
     environment.systemPackages = with pkgs; [
       neovim
+      sbctl
       git
       kitty
       imagemagick
@@ -10,6 +11,7 @@
       kdePackages.breeze
       kdePackages.breeze-icons
       mpv
+      pcmanfm
     ];
   };
 }

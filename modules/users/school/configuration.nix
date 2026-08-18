@@ -3,6 +3,11 @@
     users.users.school = {
       isNormalUser = true;
       extraGroups = [ "networkmanager" "video" "render" ];
+      packages = with pkgs; [
+        libreoffice-qt
+        hunspell
+        hunspellDicts.en_US
+      ];
     };
   };
   flake.homeModules.schoolConfiguration = { pkgs, ... }: {
