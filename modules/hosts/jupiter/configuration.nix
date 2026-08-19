@@ -1,20 +1,12 @@
 { self, inputs, ... }: {
   flake.nixosModules.jupiterConfiguration = { pkgs, config, ... }: {
     imports = [
+      self.nixosModules.commonImports
       self.nixosModules.jupiterHardwareConfiguration
       self.nixosModules.jupiterUsers
-      self.nixosModules.limine
-      self.nixosModules.homeManager
-      self.nixosModules.niri
-      self.nixosModules.garbageCollection
-      self.nixosModules.keyd
-      self.nixosModules.audio
-      self.nixosModules.bluetooth
-      self.nixosModules.commonSystemPackages
-      self.nixosModules.fonts
-      self.nixosModules.localsend
       self.nixosModules.closeLaptopLid
       self.nixosModules.batteryControl
+      self.nixosModules.obsStudio
     ];
     time.timeZone = "America/New_York";
     networking = {
@@ -22,14 +14,9 @@
       networkmanager.enable = true;
     };
     environment.systemPackages = with pkgs; [
-      librewolf
-      ungoogled-chromium
-      brightnessctl
-      grim
-      slurp
-      wl-clipboard
-      thunderbird
-      localsend
+      kdePackages.kdenlive
+      alsa-scarlett-gui
+      scarlett2
     ];
     nixpkgs.config.allowUnfree = true;
     boot.loader.limine.extraEntries = ''

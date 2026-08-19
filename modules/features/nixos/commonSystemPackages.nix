@@ -12,6 +12,13 @@
       kdePackages.breeze-icons
       mpv
       pcmanfm
+      librewolf
+      ungoogled-chromium
+      brightnessctl
+      grim
+      slurp
+      wl-clipboard
+      thunderbird
     ];
   };
 }

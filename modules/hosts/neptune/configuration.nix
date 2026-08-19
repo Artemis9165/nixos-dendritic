@@ -1,18 +1,9 @@
 { self, inputs, ... }: {
   flake.nixosModules.neptuneConfiguration = { pkgs, ... }: {
     imports = [
+      self.nixosModules.commonImports
       self.nixosModules.neptuneHardwareConfiguration
-      self.nixosModules.limine
       self.nixosModules.neptuneUsers
-      self.nixosModules.homeManager
-      self.nixosModules.niri
-      self.nixosModules.garbageCollection
-      self.nixosModules.keyd
-      self.nixosModules.audio
-      self.nixosModules.bluetooth
-      self.nixosModules.localsend
-      self.nixosModules.commonSystemPackages
-      self.nixosModules.fonts
       self.nixosModules.obsStudio
       self.nixosModules.closeLaptopLid
       self.nixosModules.batteryControl
@@ -23,15 +14,6 @@
       hostName = "Stylinx-Neptune";
       networkmanager.enable = true;
     };
-    environment.systemPackages = with pkgs; [
-      librewolf
-      ungoogled-chromium
-      brightnessctl
-      grim
-      slurp
-      wl-clipboard
-      thunderbird
-    ];
     hardware.graphics = {
       enable = true;
       extraPackages = with pkgs; [
