@@ -17,6 +17,8 @@
       kdePackages.kdenlive
       alsa-scarlett-gui
       scarlett2
+      audacity
+      easyeffects
     ];
     nixpkgs.config.allowUnfree = true;
     boot.loader.limine.extraEntries = ''
