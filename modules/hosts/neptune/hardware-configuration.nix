@@ -1,29 +1,54 @@
 { self, inputs, ... }: {
-  flake.nixosModules.neptuneHardwareConfiguration = { config, lib, pkgs, modulesPath, ... }: {
-    imports = [
-      (modulesPath + "/installer/scan/not-detected.nix")
+flake.nixosModules.neptuneHardwareConfiguration = { config, lib, pkgs, modulesPath, ... }:
+
+{
+  imports =
+    [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
-    boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" ];
-    boot.initrd.kernelModules = [ ];
-    boot.kernelModules = [ "kvm-intel" ];
-    boot.extraModulePackages = [ ];
-    fileSystems."/" = {
-      device = "/dev/disk/by-uuid/43daecf0-e73c-4224-ad67-888b2fb7e95f";
-      fsType = "ext4";
+
+  boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" ];
+  boot.initrd.kernelModules = [ ];
+  boot.kernelModules = [ "kvm-intel" ];
+  boot.extraModulePackages = [ ];
+
+  fileSystems."/" =
+    { device = "/dev/mapper/cryptroot";
+      fsType = "btrfs";
+      options = [ "subvol=root" ];
     };
-    fileSystems."/boot" = {
-      device = "/dev/disk/by-uuid/0264-FA01";
+
+  boot.initrd.luks.devices."cryptroot".device = "/dev/disk/by-uuid/d11bcf4d-3bde-4ac7-9585-fa33eb22decb";
+
+  fileSystems."/home" =
+    { device = "/dev/mapper/cryptroot";
+      fsType = "btrfs";
+      options = [ "subvol=home" ];
+    };
+
+  fileSystems."/nix" =
+    { device = "/dev/mapper/cryptroot";
+      fsType = "btrfs";
+      options = [ "subvol=nix" ];
+    };
+
+  fileSystems."/swap" =
+    { device = "/dev/mapper/cryptroot";
+      fsType = "btrfs";
+      options = [ "subvol=swap" ];
+    };
+
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/CB4D-5CB9";
       fsType = "vfat";
-      options = [ "fmask=0007" "dmask=0007" ];
+      options = [ "fmask=0022" "dmask=0022" ];
     };
-    fileSystems."/home" = {
-      device = "/dev/disk/by-uuid/9e221aa7-58ec-4d26-b8ca-559523f87d7a";
-      fsType = "ext4";
-    };
-    swapDevices = [
-      { device = "/dev/disk/by-uuid/9abe351d-c40f-4ccb-8bbd-1f345322dd8f"; }
-    ];
-    nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-    hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
-  };
+
+  swapDevices = [{
+    device  = "/swap/swapfile";
+    size = 10 * 1024;
+  }];
+
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+};
 }
