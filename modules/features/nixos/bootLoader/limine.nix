@@ -4,10 +4,11 @@
       sbctl
     ];
     boot.loader = {
-      efi.canTouchEfiVariables = true;
+      efi.canTouchEfiVariables = false;
       limine = {
         enable = true;
         efiSupport = true;
+        efiInstallAsRemovable = true;
       };
     };
   };
