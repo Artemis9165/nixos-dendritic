@@ -26,6 +26,10 @@
       protocol: efi
       path: uuid(fdda432a-f6f1-43fc-a046-60de5207e8f7):/EFI/Microsoft/Boot/bootmgfw.efi
     '';
+    boot.kernelParams = [
+      "amdgpu.dcdebugmask=0x10"
+      "nvidia-drm.fbdev=1"
+    ];
     services.xserver.videoDrivers = [
       "amdgpu"
       "nvidia"
