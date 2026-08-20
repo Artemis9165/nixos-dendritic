@@ -28,6 +28,7 @@
     '';
     boot.kernelParams = [
       "amdgpu.dcdebugmask=0x10"
+      "amdgpu.abmlevel=0"
       "nvidia-drm.fbdev=1"
     ];
     services.xserver.videoDrivers = [
@@ -40,7 +41,7 @@
         enable32Bit = true;
       };
       nvidia = {
-        open = true;
+        open = false;
         modesetting.enable = true;
         powerManagement = {
           enable = true;
