@@ -17,7 +17,7 @@
       kdePackages.kdenlive
       alsa-scarlett-gui
       scarlett2
-      audacity
+      tenacity
       easyeffects
     ];
     nixpkgs.config.allowUnfree = true;
