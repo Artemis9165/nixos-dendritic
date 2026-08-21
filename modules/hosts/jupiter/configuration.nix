@@ -31,6 +31,12 @@
       graphics = {
         enable = true;
         enable32Bit = true;
+        extraPackages = with pkgs; [
+          libva-utils
+          mesa
+          vulkan-validation-layers
+          rocmPackages.cls
+        ];
       };
       nvidia = {
         open = false;

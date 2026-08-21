@@ -16,6 +16,7 @@
         obs-vaapi
         obs-pipewire-audio-capture
         obs-vkcapture
+        obs-multi-rtmp
       ];
     };
   };

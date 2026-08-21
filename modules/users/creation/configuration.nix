@@ -4,6 +4,7 @@
       self.nixosModules.obsStudio
       self.nixosModules.scarlett
       self.nixosModules.libreOffice
+      self.nixosModules.gaming
     ];
     users.users.creation = {
       isNormalUser = true;
