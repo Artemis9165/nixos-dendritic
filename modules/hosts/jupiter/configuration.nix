@@ -32,10 +32,10 @@
         enable = true;
         enable32Bit = true;
         extraPackages = with pkgs; [
+          libva
           libva-utils
           mesa
           vulkan-validation-layers
-          rocmPackages.cls
         ];
       };
       nvidia = {
