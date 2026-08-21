@@ -6,20 +6,12 @@
       self.nixosModules.jupiterUsers
       self.nixosModules.closeLaptopLid
       self.nixosModules.batteryControl
-      self.nixosModules.obsStudio
     ];
     time.timeZone = "America/New_York";
     networking = {
       hostName = "Stylinx-Jupiter";
       networkmanager.enable = true;
     };
-    environment.systemPackages = with pkgs; [
-      kdePackages.kdenlive
-      alsa-scarlett-gui
-      scarlett2
-      tenacity
-      easyeffects
-    ];
     nixpkgs.config.allowUnfree = true;
     boot.loader.limine.extraEntries = ''
       /Windows

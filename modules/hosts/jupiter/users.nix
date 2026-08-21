@@ -3,13 +3,15 @@
     imports = [
       inputs.home-manager.nixosModules.default
       self.nixosModules.generalInit
+      self.nixosModules.creationInit
     ];
-    users.users.general.packages = with pkgs; [
+    users.users.creation.packages = with pkgs; [
       prismlauncher
       steam
     ];
     home-manager.users = {
       general = self.homeModules.generalConfiguration;
+      creation = self.homeModules.creationConfiguration;
     };
   };
 }

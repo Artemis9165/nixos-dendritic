@@ -1,13 +1,11 @@
 { self, inputs, ... }: {
   flake.nixosModules.schoolInit = { pkgs, ... }: {
+    imports = [
+      self.nixosModules.libreOffice
+    ];
     users.users.school = {
       isNormalUser = true;
-      extraGroups = [ "networkmanager" "video" "render" ];
-      packages = with pkgs; [
-        libreoffice-qt
-        hunspell
-        hunspellDicts.en_US
-      ];
+      extraGroups = [ "networkmanager" ];
     };
   };
   flake.homeModules.schoolConfiguration = { pkgs, ... }: {
