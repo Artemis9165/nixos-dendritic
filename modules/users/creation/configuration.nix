@@ -5,7 +5,7 @@
       self.nixosModules.scarlett
       self.nixosModules.libreOffice
     ];
-    users.users.school = {
+    users.users.creation = {
       isNormalUser = true;
       extraGroups = [ "networkmanager" "video" "render" ];
       packages = with pkgs; [
