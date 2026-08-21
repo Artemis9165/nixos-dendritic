@@ -2,7 +2,7 @@
   flake.nixosModules.gaming = { pkgs, ... }: {
     programs.gamemode.enable = true;
     environment.systemPackages = with pkgs; [
-      prismlaucher
+      prismlauncher
     ];
     programs.steam = {
       enable = true;
