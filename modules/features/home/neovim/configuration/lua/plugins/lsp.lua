@@ -18,6 +18,7 @@ return {
                 lua = { "lua_ls" },
                 nix = { "nixpkgs_fmt" },
                 c = { "clang-format" },
+                r = { "styler" },
             },
             formatters = {
                 ["clang-format"] = {
@@ -45,6 +46,7 @@ return {
         })
         vim.lsp.enable('clangd')
         vim.lsp.enable('nil_ls')
+        vim.lsp.enable('r_language_server')
         vim.lsp.config('lua_ls', {
             settings = {
                 Lua = {
