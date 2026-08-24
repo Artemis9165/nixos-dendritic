@@ -9,7 +9,7 @@
     programs.ydotool.enable = true;
     users.users.creation = {
       isNormalUser = true;
-      extraGroups = [ "networkmanager" "video" "render" "input" ];
+      extraGroups = [ "networkmanager" "video" "render" "input" "ydotool" ];
       packages = with pkgs; [
         kdePackages.kdenlive
         glaxnimate
