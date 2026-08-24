@@ -5,8 +5,8 @@
       self.nixosModules.scarlett
       self.nixosModules.libreOffice
       self.nixosModules.gaming
+      self.nixosModules.handy
     ];
-    programs.ydotool.enable = true;
     users.users.creation = {
       isNormalUser = true;
       extraGroups = [ "networkmanager" "video" "render" "input" "ydotool" ];
@@ -17,8 +17,6 @@
         gimp
         tenacity
         easyeffects
-        handy
-        ydotool
       ];
     };
   };
