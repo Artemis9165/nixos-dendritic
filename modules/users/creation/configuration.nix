@@ -22,6 +22,7 @@
   flake.homeModules.creationConfiguration = { pkgs, ... }: {
     imports = [
       self.homeModules.commonImports
+      self.homeModules.emacsConfiguration
     ];
     programs.bash.enable = true;
     programs.starship.presets = [ "jetpack" ];
