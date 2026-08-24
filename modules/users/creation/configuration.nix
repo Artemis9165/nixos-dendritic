@@ -5,7 +5,7 @@
       self.nixosModules.scarlett
       self.nixosModules.libreOffice
       self.nixosModules.gaming
-      self.nixosModules.handy
+      self.nixosModules.whisper-cpp
     ];
     users.users.creation = {
       isNormalUser = true;
