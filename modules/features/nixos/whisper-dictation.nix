@@ -1,8 +1,28 @@
 { self, inputs, ... }: {
-  flake.nixosModules.whisper-dictation = { pkgs, ... }:
+  flake.nixosModules.whisper-dictation = { pkgs, lib, ... }:
     let
       system = pkgs.stdenv.hostPlatform.system;
-      whisperPkg = inputs.whisper-dictation.packages.${system}.default;
+      whisperPkgUnwrapped = inputs.whisper-dictation.packages.${system}.default;
+
+      giLibs = with pkgs; [
+        glib
+        gtk4
+        gdk-pixbuf
+        pango
+        graphene
+        gobject-introspection
+      ];
+
+      whisperPkg = pkgs.symlinkJoin {
+        name = "whisper-dictation-wrapped";
+        paths = [ whisperPkgUnwrapped ];
+        buildInputs = [ pkgs.makeWrapper ];
+        postBuild = ''
+          wrapProgram $out/bin/whisper-dictation \
+            --prefix GI_TYPELIB_PATH : "${lib.makeSearchPath "lib/girepository-1.0" giLibs}" \
+            --prefix LD_LIBRARY_PATH : "${lib.makeLibraryPath giLibs}"
+        '';
+      };
     in
     {
       environment.systemPackages = [ whisperPkg ];
