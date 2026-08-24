@@ -5,11 +5,11 @@
       self.nixosModules.scarlett
       self.nixosModules.libreOffice
       self.nixosModules.gaming
-      self.nixosModules.whisper-cpp
+      self.nixosModules.whisper-dictation
     ];
     users.users.creation = {
       isNormalUser = true;
-      extraGroups = [ "networkmanager" "video" "render" "input" "ydotool" ];
+      extraGroups = [ "networkmanager" "video" "render" "input" ];
       packages = with pkgs; [
         kdePackages.kdenlive
         glaxnimate
