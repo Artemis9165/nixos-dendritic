@@ -16,6 +16,7 @@
         gimp
         tenacity
         easyeffects
+        handy
       ];
     };
   };
