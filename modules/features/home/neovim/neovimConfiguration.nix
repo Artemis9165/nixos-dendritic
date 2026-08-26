@@ -20,12 +20,6 @@
       nil
       nixfmt
       nixpkgs-fmt
-      (rWrapper.override {
-        packages = with rPackages; [
-          languageserver
-          styler
-        ];
-      })
     ];
     programs.neovim = {
       enable = true;
