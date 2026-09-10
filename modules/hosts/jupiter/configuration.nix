@@ -36,7 +36,7 @@
           libva-utils
           mesa
           vulkan-validation-layers
-          nvidia-vaapa-driver
+          nvidia-vaapi-driver
         ];
       };
       nvidia = {
