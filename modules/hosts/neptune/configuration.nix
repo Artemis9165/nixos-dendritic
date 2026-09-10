@@ -1,5 +1,5 @@
 { self, inputs, ... }: {
-  flake.nixosModules.neptuneConfiguration = { pkgs, ... }: {
+  flake.nixosModules.neptuneConfiguration = { pkgs, config, ... }: {
     imports = [
       self.nixosModules.commonImports
       self.nixosModules.neptuneHardwareConfiguration
@@ -7,7 +7,7 @@
       self.nixosModules.obsStudio
       self.nixosModules.closeLaptopLid
       self.nixosModules.batteryControl
-      self.nixosModules.games
+      self.nixosModules.gaming
       self.nixosModules.radicale # TEMPORARY FIX, MOVE LATER
     ];
     time.timeZone = "America/New_York";
@@ -15,6 +15,9 @@
       hostName = "Stylinx-Neptune";
       networkmanager.enable = true;
     };
+    nixpkgs.config.permittedInsecurePackages = [
+      "electron-41.10.6"
+    ];
     hardware.graphics = {
       enable = true;
       extraPackages = with pkgs; [

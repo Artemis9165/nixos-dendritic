@@ -11,6 +11,8 @@
       self.nixosModules.localsend
       self.nixosModules.commonSystemPackages
       self.nixosModules.fonts
+      self.nixosModules.stylix
+      self.nixosModules.qt
     ];
   };
 }

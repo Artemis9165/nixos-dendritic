@@ -1,15 +1,8 @@
 { self, inputs, ... }: {
   flake.nixosModules.obsStudio = { config, pkgs, ... }: {
-    xdg.portal = {
-      enable = true;
-      extraPortals = with pkgs; [
-        xdg-desktop-portal-gnome
-        xdg-desktop-portal-gtk
-      ];
-      config.niri = {
-        default = [ "gnome" "gtk" ];
-      };
-    };
+    imports = [
+      self.nixosModules.xdgPortals
+    ];
     programs.obs-studio = {
       enable = true;
       package = (
@@ -17,7 +10,6 @@
           cudaSupport = true;
         }
       );
-
       plugins = with pkgs.obs-studio-plugins; [
         obs-vaapi
         obs-pipewire-audio-capture
