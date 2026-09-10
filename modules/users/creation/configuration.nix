@@ -16,7 +16,6 @@
         gimp
         tenacity
         easyeffects
-        natron
         blender
         glaxnimate
       ];
