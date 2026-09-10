@@ -17,6 +17,8 @@
         tenacity
         easyeffects
         natron
+        blender
+        glaxnimate
       ];
     };
   };
