@@ -7,6 +7,7 @@
       self.nixosModules.obsStudio
       self.nixosModules.closeLaptopLid
       self.nixosModules.batteryControl
+      self.nixosModules.games
       self.nixosModules.radicale # TEMPORARY FIX, MOVE LATER
     ];
     time.timeZone = "America/New_York";
@@ -20,6 +21,7 @@
         intel-media-driver
       ];
     };
+    services.flatpak.enable = true;
     environment.sessionVariables = {
       LIBVA_DRIVER_NAME = "iHD";
     };
