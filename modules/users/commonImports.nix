@@ -7,7 +7,6 @@
       self.homeModules.starship
       self.homeModules.khal
       self.homeModules.btop
-      self.homeModules.stylix
     ];
   };
 }
