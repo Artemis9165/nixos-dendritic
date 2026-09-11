@@ -8,6 +8,7 @@
     programs.steam = {
       enable = true;
     };
+    nixpkgs.config.allowUnfree = true;
     programs.gamescope = {
       enable = true;
       capSysNice = true;

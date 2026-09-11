@@ -2,11 +2,13 @@
   flake.nixosModules.schoolInit = { pkgs, ... }: {
     imports = [
       self.nixosModules.libreOffice
-      self.nixosModules.rStudio
     ];
     users.users.school = {
       isNormalUser = true;
       extraGroups = [ "networkmanager" ];
+      packages = with pkgs; [
+        rstudio
+      ];
     };
   };
   flake.homeModules.schoolConfiguration = { pkgs, ... }: {
