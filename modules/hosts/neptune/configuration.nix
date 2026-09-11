@@ -3,6 +3,7 @@
     imports = [
       self.nixosModules.commonImports
       self.nixosModules.neptuneHardwareConfiguration
+      self.nixosModules.neptuneUndervolt
       self.nixosModules.neptuneUsers
       self.nixosModules.obsStudio
       self.nixosModules.closeLaptopLid
@@ -21,6 +22,12 @@
     hardware.graphics = {
       enable = true;
       extraPackages = with pkgs; [
+        intel-media-driver
+        vulkan-loader
+        vulkan-validation-layers
+        vulkan-tools
+      ];
+      extraPackages32 = with pkgs.pkgsi686Linux; [
         intel-media-driver
       ];
     };

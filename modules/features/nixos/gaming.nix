@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   flake.nixosModules.gaming = { pkgs, ... }: {
     programs.gamemode.enable = true;
+    hardware.graphics.enable32Bit = true;
     environment.systemPackages = with pkgs; [
       prismlauncher
       supertuxkart
