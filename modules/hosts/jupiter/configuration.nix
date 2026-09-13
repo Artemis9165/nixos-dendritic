@@ -6,6 +6,7 @@
       self.nixosModules.jupiterUsers
       self.nixosModules.closeLaptopLid
       self.nixosModules.batteryControl
+      self.nixosModules.laptopFanControl
     ];
     time.timeZone = "America/New_York";
     networking = {
@@ -55,6 +56,11 @@
         };
       };
     };
+    environment.etc."nbfc/nbfc.json".text = ''
+      {
+        "SelectedConfigId": "HP Omen 15-en0xxx"
+      }
+    '';
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
     system.stateVersion = "26.05";
   };
