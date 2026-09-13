@@ -58,7 +58,7 @@
     };
     environment.etc."nbfc/nbfc.json".text = ''
       {
-        "SelectedConfigId": "HP Omen 15-en0xxx"
+        "SelectedConfigId": "HP Victus 16-e0xxx"
       }
     '';
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
