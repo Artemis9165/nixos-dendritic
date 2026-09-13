@@ -21,7 +21,7 @@
           PCIE_ASPM_ON_AC = "default";
           PCIE_ASPM_ON_BAT = "default";
 
-          PLATFORM_PROFILE_ON_AC = "balanced";
+          PLATFORM_PROFILE_ON_AC = "performance";
           PLATFORM_PROFILE_ON_BAT = "balanced";
 
           STOP_CHARGE_THRESH_BAT0 = 75;
