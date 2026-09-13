@@ -14,6 +14,7 @@
         glaxnimate
         ffmpeg-full
         gimp
+        inkscape
         tenacity
         easyeffects
         blender
