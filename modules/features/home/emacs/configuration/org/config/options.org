@@ -3,6 +3,7 @@
 
 * Disable Backups
 #+begin_src emacs-lisp
+;; -*- lexical-binding: t -*-
 (setq make-backup-files nil)
 #+end_src
 

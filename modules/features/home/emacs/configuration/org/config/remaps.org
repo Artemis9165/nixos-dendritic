@@ -3,6 +3,7 @@
 
 * General Keybindings
 #+begin_src emacs-lisp
+;; -*- lexical-binding: t -*-
               (use-package general 
                 :ensure t 
             	  :demand t

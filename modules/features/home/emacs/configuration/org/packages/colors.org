@@ -3,6 +3,7 @@
 
 * Doom Themes
 #+begin_src emacs-lisp
+;; -*- lexical-binding: t -*-
     (use-package doom-themes
     :ensure t
     :demand t

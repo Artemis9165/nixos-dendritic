@@ -1,9 +1,10 @@
-#+TITLE:Consult
+#+TITLE: Compat
 #+AUTHOR: Archemis
+
 #+begin_src emacs-lisp
 ;; -*- lexical-binding: t -*-
-    (use-package consult
-:ensure t
-:demand t)
-
+    (use-package compat
+    :ensure (:wait t)
+    :demand t)
 #+end_src
+

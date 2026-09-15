@@ -1,6 +1,7 @@
 #+TITLE: Savehist
 #+AUTHOR: Archemis
 #+begin_src emacs-lisp
+;; -*- lexical-binding: t -*-
         (use-package savehist
           :elpaca nil
     :init (savehist-mode))

@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t -*-
 (require 'org)
 (require 'ob-tangle)
 (setq dotfiles-dir (expand-file-name "org/" user-emacs-directory))

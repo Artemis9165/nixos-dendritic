@@ -3,6 +3,7 @@
 
 * Appear
 #+begin_src emacs-lisp
+;; -*- lexical-binding: t -*-
     (use-package org-appear
 :ensure t
 :demand t
