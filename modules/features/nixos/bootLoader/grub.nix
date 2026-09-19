@@ -6,7 +6,6 @@
         device = "nodev";
         efiSupport = true;
         gfxpayloadEfi = "keep";
-        theme = ./themes/darkmatter;
       };
       efi.canTouchEfiVariables = true;
     };
