@@ -2,7 +2,6 @@
   flake.nixosModules.neptuneConfiguration = { pkgs, config, ... }: {
     imports = [
       self.nixosModules.commonImports
-      self.nixosModules.limine
       self.nixosModules.neptuneHardwareConfiguration
       self.nixosModules.neptuneUndervolt
       self.nixosModules.neptuneUsers

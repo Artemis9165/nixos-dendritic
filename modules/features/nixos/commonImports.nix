@@ -1,6 +1,7 @@
 { self, inputs, ... }: {
   flake.nixosModules.commonImports = { ... }: {
     imports = [
+      self.nixosModules.limine
       self.nixosModules.homeManager
       self.nixosModules.niri
       self.nixosModules.garbageCollection
