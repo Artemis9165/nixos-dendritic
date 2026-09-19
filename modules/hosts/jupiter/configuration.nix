@@ -2,6 +2,7 @@
   flake.nixosModules.jupiterConfiguration = { pkgs, config, ... }: {
     imports = [
       self.nixosModules.commonImports
+      self.nixosModules.grub
       self.nixosModules.jupiterHardwareConfiguration
       self.nixosModules.jupiterUsers
       self.nixosModules.closeLaptopLid
@@ -14,15 +15,15 @@
       networkmanager.enable = true;
     };
     nixpkgs.config.allowUnfree = true;
-    boot.loader.limine.extraEntries = ''
-      /Windows
-      protocol: efi
-      path: uuid(fdda432a-f6f1-43fc-a046-60de5207e8f7):/EFI/Microsoft/Boot/bootmgfw.efi
-    '';
+    boot.loader.grub = {
+      gfxmodeEfi = "1920x1080";
+      useOSProber = true;
+    };
     boot.kernelParams = [
       "amdgpu.dcdebugmask=0x10"
       "amdgpu.abmlevel=0"
       "nvidia-drm.fbdev=1"
+      "ec_sys.write_support=1"
     ];
     services.xserver.videoDrivers = [
       "amdgpu"
