@@ -1,6 +1,6 @@
 { self, inputs, ... }: {
   flake.nixosModules.laptopFanControl = { config, pkgs, ... }: {
-    environment.systemPackages = [ pkgs.nbfc-linux ];
+    environment.systemPackages = with pkgs; [ nbfc-linux lm_sensors ];
     systemd.services.nbfc_service = {
       enable = true;
       description = "NoteBook FanControl service";
