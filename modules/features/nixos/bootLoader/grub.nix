@@ -6,8 +6,9 @@
         device = "nodev";
         efiSupport = true;
         gfxpayloadEfi = "keep";
+        efiInstallAsRemoveable = true;
       };
-      efi.canTouchEfiVariables = true;
+      efi.canTouchEfiVariables = false;
     };
   };
 }
