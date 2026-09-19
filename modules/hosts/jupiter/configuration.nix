@@ -23,7 +23,6 @@
       "amdgpu.dcdebugmask=0x10"
       "amdgpu.abmlevel=0"
       "nvidia-drm.fbdev=1"
-      "ec_sys.write_support=1"
     ];
     services.xserver.videoDrivers = [
       "amdgpu"
